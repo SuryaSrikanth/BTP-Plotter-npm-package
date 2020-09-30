@@ -1,6 +1,6 @@
 # BTP-Plotter-npm-package
  
 ## Installation
-    npm -i btp-func-plotter
-    
+    npm -i btp-fn-plotter
+
 ## Instructions
