@@ -1,11 +1,19 @@
 {
   "name": "btp-fn-plotter",
   "version": "1.0.0",
-  "description": "Plots graphs in web pages.",
+  "description": "Plots graphs on webpages",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Surya",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuryaSrikanth/BTP-Plotter-npm-package.git"
+  },
+  "author": "Surya Srikanth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SuryaSrikanth/BTP-Plotter-npm-package/issues"
+  },
+  "homepage": "https://github.com/SuryaSrikanth/BTP-Plotter-npm-package#readme"
 }
