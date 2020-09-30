@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/SuryaSrikanth/BTP-Plotter-npm-package/issues"
   },
-  "homepage": "https://github.com/SuryaSrikanth/BTP-Plotter-npm-package#readme"
+  "homepage": "https://github.com/SuryaSrikanth/BTP-Plotter-npm-package#readme",
+  "dependencies": {
+    "function-plot": "^1.22.2"
+  }
 }
