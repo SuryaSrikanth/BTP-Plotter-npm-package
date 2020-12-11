@@ -3,33 +3,30 @@ import functionPlot from "function-plot";
 function drawFromData(eqn, htmlTag) {
   let graphTitle = "";
 
-  if (eqn.hasOwnProperty("graphTitle")){
-    graphTitle = eqn.graphTitle;
+  if (!eqn.hasOwnProperty("title")) {
+    eqn.data.forEach(function (funcObj) {
+      eqn.title = graphTitle.concat(String(funcObj.fn), ", ");
+    });
   }
-  else {
-  eqn.equations.forEach(function (funcObj) { 
-   graphTitle = graphTitle.concat(String(funcObj.fn), ", ");
-  }
-  );}
 
-  let JSONdata = {
-    title: graphTitle,
-    target: htmlTag,
-    grid: eqn.grid,
-    width: eqn.dimensions.width,
-    height: eqn.dimensions.height,
-    disableZoom: !eqn.interactive,
-    xAxis: {
-      label: "x - axis",
-    },
-    yAxis: {
-      label: "y - axis",
-    },
-    data: eqn.equations,
-  };
-
-  functionPlot(JSONdata);
-
+  // let JSONdata = {
+    // title: graphTitle,
+    // target: htmlTag,
+    // grid: eqn.grid,
+    // width: eqn.dimensions.width,
+    // height: eqn.dimensions.height,
+    // disableZoom: !eqn.interactive,
+    // xAxis: {
+    //   label: "x - axis",
+    // },
+    // yAxis: {
+    //   label: "y - axis",
+    // },
+    // data: eqn.equations,
+  // };
+  let eqn_f = { ...eqn, target: htmlTag }
+  functionPlot(eqn_f);
+  console.log(eqn)
   if (eqn.hasOwnProperty("backgroundColor")) {
     document.getElementsByClassName("function-plot")[0].style.backgroundColor =
       eqn.backgroundColor;
