@@ -1,6 +1,8 @@
 import functionPlot from "function-plot";
 
+
 function drawFromData(eqn, htmlTag) {
+
   let graphTitle = "";
 
   if (!eqn.hasOwnProperty("title")) {
@@ -13,10 +15,10 @@ function drawFromData(eqn, htmlTag) {
   let eqn_f = { ...eqn, target: htmlTag }
   functionPlot(eqn_f);
   
-
   if (eqn.hasOwnProperty("backgroundColor")) {
 
     document.getElementsByClassName("function-plot")[0].style.backgroundColor =
+    
       eqn.backgroundColor;
   }
 
@@ -69,7 +71,7 @@ function copydata(ide) {
   document.execCommand("copy");
 }
 
-var make_available = global || window;
+var make_available = window || global;
 
 make_available.drawFromPath = drawFromPath;
 

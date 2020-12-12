@@ -1,11 +1,11 @@
 {
   "name": "btp-fn-plotter",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Plots graphs on webpages",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack" : "webpack"
+    "webpack": "webpack"
   },
   "repository": {
     "type": "git",
