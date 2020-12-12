@@ -9,43 +9,35 @@ function drawFromData(eqn, htmlTag) {
     });
   }
 
-  // let JSONdata = {
-    // title: graphTitle,
-    // target: htmlTag,
-    // grid: eqn.grid,
-    // width: eqn.dimensions.width,
-    // height: eqn.dimensions.height,
-    // disableZoom: !eqn.interactive,
-    // xAxis: {
-    //   label: "x - axis",
-    // },
-    // yAxis: {
-    //   label: "y - axis",
-    // },
-    // data: eqn.equations,
-  // };
+
   let eqn_f = { ...eqn, target: htmlTag }
   functionPlot(eqn_f);
-  console.log(eqn)
+  
+
   if (eqn.hasOwnProperty("backgroundColor")) {
+
     document.getElementsByClassName("function-plot")[0].style.backgroundColor =
       eqn.backgroundColor;
   }
 
   // Path setting size
   if (eqn.hasOwnProperty("strokeWidth")) {
+
     let pths = document
       .getElementsByClassName("function-plot")[0]
       .querySelectorAll("path");
-    pths.forEach((e) => {
+
+      pths.forEach((e) => {
       e.setAttribute("stroke-width", eqn.strokeWidth);
     });
+
 
     document
       .getElementsByClassName("function-plot")[0]
       .on("change", function () {
-        console.log("changed");
+        
         pths.forEach((e) => {
+
           e.setAttribute("stroke-width", eqn.strokeWidth);
         });
       });
@@ -55,25 +47,36 @@ function drawFromData(eqn, htmlTag) {
 // FileIO
 function drawFromPath(p, htmlTag) {
   // using Async request---- Working, try Xmlhttprequest
+
   (async () => {
+
     const jsondata = await (await fetch(p)).json();
+
     drawFromData(jsondata, htmlTag);
   })();
 }
 
 function getsvgdata(ide) {
+
   var x = document.getElementById(ide).innerHTML;
   return x;
 }
+
 function copydata(ide) {
   var x = document.getElementById(ide);
+
   x.select();
   document.execCommand("copy");
 }
 
-global.drawFromPath = drawFromPath;
-global.drawFromData = drawFromData;
-global.getsvgdata = getsvgdata;
-global.copydata = copydata;
+var make_available = global || window;
+
+make_available.drawFromPath = drawFromPath;
+
+make_available.drawFromData = drawFromData;
+
+make_available.getsvgdata = getsvgdata;
+
+make_available.copydata = copydata;
 
 export default { drawFromPath, drawFromData, getsvgdata, copydata };

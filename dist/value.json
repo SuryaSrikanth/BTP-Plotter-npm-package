@@ -1,0 +1,54 @@
+{
+    "data": [
+        {
+            "fn": "x^2 + 1",
+            "eqString": "x^2 + 1",
+            "closed": false,
+            "skiptip": false,
+            "color": "red",
+            "isDerivative": false,
+            "isImplicit": false
+        },
+        {
+            "fn": "x - 1",
+            "eqString": "x - 1",
+            "closed": false,
+            "skiptip": false,
+            "color": "yellow",
+            "isDerivative": false,
+            "isImplicit": false
+        },
+        {
+            "fn": "( 2) - (x^2 + y^2 )",
+            "eqString": "( 2) - (x^2 + y^2 )",
+            "closed": false,
+            "skiptip": false,
+            "color": "red",
+            "isDerivative": true,
+            "isImplicit": true,
+            "fnType": "implicit"
+        }
+    ],
+    "title": "this is title",
+ 
+    "width": 400,
+    "height": 400,
+    "xAxis": {
+        "label": "this is x axis",
+        "type": "linear",
+        "domain": [
+            -6,
+            6
+        ]
+    },
+    "yAxis": {
+        "label": "this is y axis",
+        "type": "linear",
+        "domain": [
+            -6,
+            6
+        ]
+    },
+    "grid": true,
+    "annotations": []
+    }
