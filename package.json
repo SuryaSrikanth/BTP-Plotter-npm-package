@@ -1,6 +1,6 @@
 {
   "name": "btp-fn-plotter",
-  "version": "1.0.9",
+  "version": "1.1.1",
   "description": "Plots graphs on webpages",
   "main": "src/index.js",
   "scripts": {
